@@ -23,6 +23,15 @@ It integrates seamlessly with **Friday Core** and works with:
 
 ---
 
+## 📦 Installation
+
+Friday Evaluation will be available on PyPI soon.
+
+```bash
+pip install friday-evaluation   # coming soon
+```
+---
+
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/Status-Under%20Development-orange.svg)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
