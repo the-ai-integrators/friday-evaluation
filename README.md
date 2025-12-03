@@ -1,5 +1,16 @@
-# 📦 friday-evaluation
-### _Evaluation Engine for Multi-Agent AI Workflows_
+<p align="left">
+  <a href="https://github.com/theaiintegrators">
+    <img src="https://img.shields.io/badge/Friday-Ecosystem-4B8BF5" />
+  </a>
+  <img src="https://img.shields.io/badge/status-active-success" />
+  <img src="https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11-blue" />
+  <img src="https://img.shields.io/badge/license-MIT-yellow" />
+  <img src="https://img.shields.io/badge/docs-in%20progress-lightgrey" />
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" />
+</p>
+
+# 🧪 friday-evaluation  
+_Modular evaluation engine for validating multi-agent outputs_
 
 Friday Evaluation provides a modular layer for **validating agent decisions, scoring outputs, and enforcing safety or correctness rules** within Friday's orchestration engine.
 
