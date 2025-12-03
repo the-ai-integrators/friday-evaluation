@@ -2,91 +2,81 @@
   <a href="https://github.com/theaiintegrators">
     <img src="https://img.shields.io/badge/Friday-Ecosystem-4B8BF5" />
   </a>
-  <img src="https://img.shields.io/badge/status-active-success" />
-  <img src="https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11-blue" />
-  <img src="https://img.shields.io/badge/license-MIT-yellow" />
-  <img src="https://img.shields.io/badge/docs-in%20progress-lightgrey" />
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" />
+    <img src="https://img.shields.io/badge/status-active-success" />
+    <img src="https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11-blue" />
+    <img src="https://img.shields.io/badge/license-MIT-yellow" />
+    <img src="https://img.shields.io/badge/docs-in%20progress-lightgrey" />
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen" />
 </p>
 
 # 🧪 friday-evaluation  
-_Modular evaluation engine for validating multi-agent outputs_
+_Modular evaluation engine for validating and scoring multi-agent AI workflows_
 
-Friday Evaluation provides a modular layer for **validating agent decisions, scoring outputs, and enforcing safety or correctness rules** within Friday's orchestration engine.
+Friday Evaluation provides the validation layer for Friday’s orchestration runtime.  
+It is designed to support **enterprise-grade evaluation** inspired by systems like:
 
-It integrates seamlessly with **Friday Core** and works with:
+- **LangSmith scoring pipelines**  
+- **DeepEval-style structured evaluation**  
+- **OpenAI A2A safety & compliance flows**  
+- **Microsoft Agent Framework evaluation patterns**  
+- **Model Context Protocol (MCP)-aligned validation interfaces**  
 
-- LLM-based evaluators  
-- Rule-based evaluators  
-- DeepEval evaluators  
-- Custom enterprise validation logic  
-
----
-
-## 📦 Installation
-
-Friday Evaluation will be available on PyPI soon.
-
-```bash
-pip install friday-evaluation   # coming soon
-```
----
-
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Status](https://img.shields.io/badge/Status-Under%20Development-orange.svg)
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)
+It allows AI workflows to enforce correctness, safety, consistency, and policy adherence.
 
 ---
 
-## 🌟 Why Evaluation Matters
+# 🌟 Why Evaluation Matters
 
-Multi-agent systems fail silently without proper evaluation. Common issues include:
+Multi-agent systems cannot be trusted without proper evaluation.
 
-- Hallucinated outputs  
-- Incorrect next-step routing  
-- Invalid intermediate data  
-- Violations of business rules  
-- No measurable correctness  
+Friday Evaluation provides:
 
-Friday Evaluation introduces a consistent and modular validation pipeline that plugs directly into Friday Core.
+- guardrails against hallucination  
+- correctness scoring  
+- business rule validation  
+- structured output enforcement  
+- acceptance thresholds  
+- audit trails for enterprise governance  
+
+It ensures agent workflows behave **predictably**, **safely**, and **repeatably**.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-- **LLM-based evaluation** (Azure OpenAI / OpenAI)  
-- **Rule-based validators** (Python conditions)  
-- **DeepEval integration**  
+- **LLM-based evaluators**  
+- **Rule-based Python evaluators**  
+- **Composite evaluators (chain/parallel)**  
 - **Scoring + pass/fail logic**  
-- **Thresholds for enterprise safety**  
-- **Multi-step workflow compatibility**  
-- **Plug-and-play design**  
+- **Threshold enforcement**  
+- **DeepEval compatibility**  
+- **Extensible evaluation hooks for enterprises**  
 
 ---
 
-## 🧩 Architecture Overview
+# 🏛 Architecture Overview
 
 Friday Evaluation sits between agent executions:
 
 ```
-Agent → Evaluation → Router → Next Agent
+Agent Output → Evaluation → Router → Next Agent
 ```
 
 ### **LLM Evaluator**
-Uses an LLM to score correctness.
+Ask an LLM to judge correctness or quality.
 
 ### **Rule Evaluator**
-Executes Python rules (e.g., "non-empty", "is JSON", etc.)
+Pure Python rules to enforce structure & logic.
 
 ### **Composite Evaluator**
-Chains multiple evaluators.
+Combine multiple evaluators into a unified scoring pipeline.
 
 ### **Policies & Thresholds**
-Define business acceptance criteria.
+Define acceptance criteria for enterprise workflows.
 
 ---
 
-## 📁 Repository Structure
+# 📁 Repository Structure
 
 ```
 friday-evaluation/
@@ -103,7 +93,7 @@ friday-evaluation/
 
 ---
 
-## 🚀 Example: Rule-Based Evaluation
+# 🚀 Example: Rule-Based Evaluation
 
 ```python
 from friday_evaluation import RuleEvaluator
@@ -118,14 +108,14 @@ print(score.passed)  # True
 
 ---
 
-## 🤖 Example: LLM-Based Evaluation
+# 🤖 Example: LLM Evaluation
 
 ```python
 from friday_evaluation import LlmEvaluator
 
 evaluator = LlmEvaluator(
     model="gpt-4o-mini",
-    prompt_template="Rate the correctness of the agent output from 1-10: {output}"
+    prompt_template="Rate correctness of the agent output from 1-10: {output}"
 )
 
 score = evaluator.evaluate("Generated onboarding workflow...")
@@ -134,7 +124,7 @@ print(score.score)  # e.g., 8.3
 
 ---
 
-## 🔗 Integrating With Friday Core
+# 🔗 Integration with Friday Core
 
 ```python
 from friday import Orchestrator
@@ -150,21 +140,29 @@ result = orchestrator.run("start")
 
 ---
 
-## 🧪 Roadmap
+# 🧪 Roadmap
 
-- [ ] JSON schema evaluation  
-- [ ] Business rule policy DSL  
-- [ ] Standard evaluation templates  
-- [ ] Multi-turn evaluation metrics  
-- [ ] Visual evaluation reports  
-
----
-
-## 🔭 Vision
-
-Friday Evaluation aims to make multi-agent workflows **measurable**, **trustworthy**, and **production-ready**.
+- JSON Schema evaluation  
+- Business rule policy DSL  
+- Standard evaluation templates  
+- Multi-turn evaluation metrics  
+- Policy-driven composite evaluators  
+- Visual evaluation dashboards  
 
 ---
 
-## 📄 License
+# 🔭 Vision
+
+Friday Evaluation aims to make multi-agent AI systems:
+
+- measurable  
+- inspectable  
+- trustworthy  
+- compliant  
+- enterprise-safe  
+
+---
+
+# 📄 License
+
 MIT License
